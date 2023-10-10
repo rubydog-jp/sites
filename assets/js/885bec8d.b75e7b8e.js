@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkrubydog=self.webpackChunkrubydog||[]).push([[7185],{277:s=>{s.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"tab_bitbnn"}')}}]);
