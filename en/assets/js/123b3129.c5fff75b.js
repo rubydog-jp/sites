@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkrubydog=self.webpackChunkrubydog||[]).push([[3650],{8700:e=>{e.exports=JSON.parse('{"label":"release","permalink":"/rubydog-site/en/news/tags/release","allTagsPath":"/rubydog-site/en/news/tags","count":2}')}}]);

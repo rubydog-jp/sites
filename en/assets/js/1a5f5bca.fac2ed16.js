@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkrubydog=self.webpackChunkrubydog||[]).push([[7532],{3480:e=>{e.exports=JSON.parse('[{"label":"release","permalink":"/en/news/tags/release","count":2},{"label":"roadmap","permalink":"/en/news/tags/roadmap","count":1},{"label":"welcome","permalink":"/en/news/tags/welcome","count":1}]')}}]);

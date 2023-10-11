@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkrubydog=self.webpackChunkrubydog||[]).push([[1750],{6769:e=>{e.exports=JSON.parse('{"permalink":"/en/news/tags/roadmap","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
