@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkrubydog=self.webpackChunkrubydog||[]).push([[7532],{3480:e=>{e.exports=JSON.parse('[{"label":"anniversary","permalink":"/en/news/tags/anniversary","count":1}]')}}]);

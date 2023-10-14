@@ -2,50 +2,24 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Rubydog Blog</title>
-        <link>https://rubydog-jp.github.io/en/news</link>
+        <link>https://rbdog.biz/en/news</link>
         <description>Rubydog Blog</description>
-        <lastBuildDate>Sat, 01 Oct 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 31 Oct 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <item>
-            <title><![CDATA[Bit Banana 1.1]]></title>
-            <link>https://rubydog-jp.github.io/en/news/bitbnn-1_1</link>
-            <guid>bitbnn-1_1</guid>
-            <pubDate>Sat, 01 Oct 2022 00:00:00 GMT</pubDate>
+            <title><![CDATA[祝！設立記念！🎉]]></title>
+            <link>https://rbdog.biz/en/news/start</link>
+            <guid>start</guid>
+            <pubDate>Tue, 31 Oct 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[(この記事は編集中です)]]></description>
             <content:encoded><![CDATA[<p>(この記事は編集中です)<br>
-<!-- -->ビットバナナ 1.1 がリリースされました 🎉</p>]]></content:encoded>
-            <category>release</category>
-        </item>
-        <item>
-            <title><![CDATA[ロードマップ]]></title>
-            <link>https://rubydog-jp.github.io/en/news/roadmap</link>
-            <guid>roadmap</guid>
-            <pubDate>Mon, 05 Sep 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[(この記事は編集中です)]]></description>
-            <content:encoded><![CDATA[<p>(この記事は編集中です)<br>
-<!-- -->ビットバナナの今後の展開について</p><p>追って記載します</p>]]></content:encoded>
-            <category>roadmap</category>
-        </item>
-        <item>
-            <title><![CDATA[Bit Banana 1.0]]></title>
-            <link>https://rubydog-jp.github.io/en/news/bitbnn-1_0</link>
-            <guid>bitbnn-1_0</guid>
-            <pubDate>Thu, 01 Sep 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[(この記事は編集中です)]]></description>
-            <content:encoded><![CDATA[<p>(この記事は編集中です)<br>
-<!-- -->ビットバナナ 1.0 がリリースされました 🎉</p>]]></content:encoded>
-            <category>release</category>
-        </item>
-        <item>
-            <title><![CDATA[ようこそ]]></title>
-            <link>https://rubydog-jp.github.io/en/news/welcome</link>
-            <guid>welcome</guid>
-            <pubDate>Wed, 31 Aug 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[ビットバナナの News を掲載します]]></description>
-            <content:encoded><![CDATA[<p>ビットバナナの News を掲載します</p>]]></content:encoded>
-            <category>welcome</category>
+<!-- -->こんにちは！
+このたび私たちは人間 1 人, ボット 3 体の計 4 名にて
+バーチャル会社ルビードッグを設立いたしました 🎉
+どうぞこれからよろしくお願いいたします</p>]]></content:encoded>
+            <category>anniversary</category>
         </item>
     </channel>
 </rss>

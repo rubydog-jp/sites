@@ -1,48 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://rubydog-jp.github.io/en/news</id>
+    <id>https://rbdog.biz/en/news</id>
     <title>Rubydog Blog</title>
-    <updated>2022-10-01T00:00:00.000Z</updated>
+    <updated>2023-10-31T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://rubydog-jp.github.io/en/news"/>
+    <link rel="alternate" href="https://rbdog.biz/en/news"/>
     <subtitle>Rubydog Blog</subtitle>
     <entry>
-        <title type="html"><![CDATA[Bit Banana 1.1]]></title>
-        <id>bitbnn-1_1</id>
-        <link href="https://rubydog-jp.github.io/en/news/bitbnn-1_1"/>
-        <updated>2022-10-01T00:00:00.000Z</updated>
+        <title type="html"><![CDATA[祝！設立記念！🎉]]></title>
+        <id>start</id>
+        <link href="https://rbdog.biz/en/news/start"/>
+        <updated>2023-10-31T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[(この記事は編集中です)]]></summary>
         <content type="html"><![CDATA[<p>(この記事は編集中です)<br>
-<!-- -->ビットバナナ 1.1 がリリースされました 🎉</p>]]></content>
-        <category label="release" term="release"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ロードマップ]]></title>
-        <id>roadmap</id>
-        <link href="https://rubydog-jp.github.io/en/news/roadmap"/>
-        <updated>2022-09-05T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[(この記事は編集中です)]]></summary>
-        <content type="html"><![CDATA[<p>(この記事は編集中です)<br>
-<!-- -->ビットバナナの今後の展開について</p><p>追って記載します</p>]]></content>
-        <category label="roadmap" term="roadmap"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Bit Banana 1.0]]></title>
-        <id>bitbnn-1_0</id>
-        <link href="https://rubydog-jp.github.io/en/news/bitbnn-1_0"/>
-        <updated>2022-09-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[(この記事は編集中です)]]></summary>
-        <content type="html"><![CDATA[<p>(この記事は編集中です)<br>
-<!-- -->ビットバナナ 1.0 がリリースされました 🎉</p>]]></content>
-        <category label="release" term="release"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ようこそ]]></title>
-        <id>welcome</id>
-        <link href="https://rubydog-jp.github.io/en/news/welcome"/>
-        <updated>2022-08-31T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[ビットバナナの News を掲載します]]></summary>
-        <content type="html"><![CDATA[<p>ビットバナナの News を掲載します</p>]]></content>
-        <category label="welcome" term="welcome"/>
+<!-- -->こんにちは！
+このたび私たちは人間 1 人, ボット 3 体の計 4 名にて
+バーチャル会社ルビードッグを設立いたしました 🎉
+どうぞこれからよろしくお願いいたします</p>]]></content>
+        <category label="anniversary" term="anniversary"/>
     </entry>
 </feed>
