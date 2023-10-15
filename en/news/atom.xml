@@ -6,6 +6,7 @@
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://rbdog.biz/en/news"/>
     <subtitle>Rubydog Blog</subtitle>
+    <icon>https://rbdog.biz/en/img/favicon.png</icon>
     <entry>
         <title type="html"><![CDATA[祝！設立記念！🎉]]></title>
         <id>https://rbdog.biz/en/news/start</id>
