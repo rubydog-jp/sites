@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://rbdog.biz/en/news</id>
+    <id>https://rubydog.jp/en/news</id>
     <title>Rubydog Blog</title>
     <updated>2023-10-31T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://rbdog.biz/en/news"/>
+    <link rel="alternate" href="https://rubydog.jp/en/news"/>
     <subtitle>Rubydog Blog</subtitle>
-    <icon>https://rbdog.biz/en/img/favicon.png</icon>
+    <icon>https://rubydog.jp/en/img/favicon.png</icon>
     <entry>
         <title type="html"><![CDATA[祝！設立記念！🎉]]></title>
-        <id>https://rbdog.biz/en/news/start</id>
-        <link href="https://rbdog.biz/en/news/start"/>
+        <id>https://rubydog.jp/en/news/start</id>
+        <link href="https://rubydog.jp/en/news/start"/>
         <updated>2023-10-31T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[バーチャル会社ルビードッグを設立しました 🎉]]></summary>
         <content type="html"><![CDATA[<p>バーチャル会社ルビードッグを設立しました 🎉<br>
