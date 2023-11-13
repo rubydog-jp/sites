@@ -4,12 +4,24 @@
         <title>Rubydog Blog</title>
         <link>https://rubydog.jp/news</link>
         <description>Rubydog Blog</description>
-        <lastBuildDate>Tue, 31 Oct 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 11 Nov 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>ja</language>
         <item>
-            <title><![CDATA[祝！設立記念！🎉]]></title>
+            <title><![CDATA[Comet💫 Ver.0.2]]></title>
+            <link>https://rubydog.jp/news/comet-0_2</link>
+            <guid>https://rubydog.jp/news/comet-0_2</guid>
+            <pubDate>Sat, 11 Nov 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[新パッケージのプレリリースを公開しました💫]]></description>
+            <content:encoded><![CDATA[<p>新パッケージのプレリリースを公開しました💫<br>
+<!-- -->CometはドキュザウルスのFlutter版,またはNext.jsの簡易版です</p><ul><li>フォルダをWebサイトへ変換</li><li>ウィジェットを挿入</li><li>サイトの公開も簡単</li><li>レスポンシブ</li></ul><p>Flutterエンジニアの皆様、ぜひお試しください<br>
+<a href="https://comet.rubydog.jp" target="_blank" rel="noopener noreferrer">https://comet.rubydog.jp</a></p><p><img loading="lazy" alt="image" src="/assets/images/comet-0_2-62d5dc26baa61c5fa356a12ddd400ab3.png" width="1280" height="720" class="img_ev3q"></p>]]></content:encoded>
+            <category>comet</category>
+            <category>release</category>
+        </item>
+        <item>
+            <title><![CDATA[祝！コミュニティ設立🎉]]></title>
             <link>https://rubydog.jp/news/start</link>
             <guid>https://rubydog.jp/news/start</guid>
             <pubDate>Tue, 31 Oct 2023 00:00:00 GMT</pubDate>
