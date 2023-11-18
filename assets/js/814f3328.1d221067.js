@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkrubydog=self.webpackChunkrubydog||[]).push([[535],{5641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Comet\ud83d\udcab Ver.0.2","permalink":"/news/comet-0_2"},{"title":"\u795d\uff01\u30b3\u30df\u30e5\u30cb\u30c6\u30a3\u8a2d\u7acb\ud83c\udf89","permalink":"/news/start"}]}')}}]);

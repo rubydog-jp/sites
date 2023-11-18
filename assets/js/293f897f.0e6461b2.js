@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkrubydog=self.webpackChunkrubydog||[]).push([[659],{1555:e=>{e.exports=JSON.parse('{"permalink":"/news","page":1,"postsPerPage":10,"totalPages":1,"totalCount":3,"blogDescription":"Blog","blogTitle":"\u30cb\u30e5\u30fc\u30b9"}')}}]);

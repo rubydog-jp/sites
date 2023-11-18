@@ -4,10 +4,24 @@
         <title>Rubydog Blog</title>
         <link>https://rubydog.jp/en/news</link>
         <description>Rubydog Blog</description>
-        <lastBuildDate>Sat, 11 Nov 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 18 Nov 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[ハニー🍯 Ver.1.1]]></title>
+            <link>https://rubydog.jp/en/news/hunny-1_1</link>
+            <guid>https://rubydog.jp/en/news/hunny-1_1</guid>
+            <pubDate>Sat, 18 Nov 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Git共同開発チュートリアル「ハニー」Ver.1.1をリリースしました🎉]]></description>
+            <content:encoded><![CDATA[<p>Git共同開発チュートリアル「ハニー」Ver.1.1をリリースしました🎉</p><ul><li>中断/再開の手順を正式に追加</li><li>後片付けの説明を追加</li></ul><p>12345 12345 12345
+こんに ちはこ んにち</p><br><p>今回からhunny公式ホームページの「ニュース」はこちらへ移転しました。<br>
+<!-- -->今後は本ホームページにてアナウンスを行います。<br>
+<!-- -->おかげ様で参加者が10名を超えました。引き続きどんどんお試しください。</p><br><p>参加はこちら<br>
+<a href="https://rubydog-jp.github.io/hunny" target="_blank" rel="noopener noreferrer">https://rubydog-jp.github.io/hunny</a></p><br><p><img loading="lazy" alt="image" src="/en/assets/images/hunny-1_1-6d2520c68896b2ca32f44506ceedd446.png" width="1280" height="720" class="img_ev3q"></p>]]></content:encoded>
+            <category>hunny</category>
+            <category>release</category>
+        </item>
         <item>
             <title><![CDATA[Comet💫 Ver.0.2]]></title>
             <link>https://rubydog.jp/en/news/comet-0_2</link>
