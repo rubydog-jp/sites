@@ -47,6 +47,10 @@ const config = {
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
+        gtag: {
+          trackingID: "G-HSS2PB95JZ",
+          anonymizeIP: true,
+        },
         docs: false,
         // docs: {
         //   path: "tab_about", // フォルダ上のパス
