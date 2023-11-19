@@ -4,10 +4,22 @@
         <title>Rubydog Blog</title>
         <link>https://rubydog.jp/news</link>
         <description>Rubydog Blog</description>
-        <lastBuildDate>Sat, 18 Nov 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 19 Nov 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>ja</language>
+        <item>
+            <title><![CDATA[Comet💫 Ver.0.3]]></title>
+            <link>https://rubydog.jp/news/comet-0_3</link>
+            <guid>https://rubydog.jp/news/comet-0_3</guid>
+            <pubDate>Sun, 19 Nov 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[マークダウンを FlutterWebアプリへ変換できるパッケージ]]></description>
+            <content:encoded><![CDATA[<p>マークダウンを FlutterWebアプリへ変換できるパッケージ
+Comet💫 Ver.0.3 をリリースしました</p><ul><li>目次を自動生成</li><li>ドキュメント向上</li><li>起動スピードUP</li></ul><p>🚀こちらからお試しいただけます<br>
+<a href="https://comet.rubydog.jp/" target="_blank" rel="noopener noreferrer">https://comet.rubydog.jp/</a></p><p><img loading="lazy" alt="gif" src="/assets/images/comet-0_3-8199ccec928ef436186b6ddcfab8a229.gif" width="1280" height="720" class="img_ev3q"></p><p>引き続きコメットをよろしくお願いします</p>]]></content:encoded>
+            <category>comet</category>
+            <category>release</category>
+        </item>
         <item>
             <title><![CDATA[ハニー🍯 Ver.1.1]]></title>
             <link>https://rubydog.jp/news/hunny-1_1</link>
@@ -29,7 +41,7 @@
             <description><![CDATA[新パッケージのプレリリースを公開しました💫]]></description>
             <content:encoded><![CDATA[<p>新パッケージのプレリリースを公開しました💫<br>
 <!-- -->CometはドキュザウルスのFlutter版,またはNext.jsの簡易版です</p><ul><li>フォルダをWebサイトへ変換</li><li>ウィジェットを挿入</li><li>サイトの公開も簡単</li><li>レスポンシブ</li></ul><p>Flutterエンジニアの皆様、ぜひお試しください<br>
-<a href="https://comet.rubydog.jp" target="_blank" rel="noopener noreferrer">https://comet.rubydog.jp</a></p><p><img loading="lazy" alt="image" src="/assets/images/comet-0_2-62d5dc26baa61c5fa356a12ddd400ab3.png" width="1280" height="720" class="img_ev3q"></p>]]></content:encoded>
+<a href="https://comet.rubydog.jp/" target="_blank" rel="noopener noreferrer">https://comet.rubydog.jp/</a></p><p><img loading="lazy" alt="image" src="/assets/images/comet-0_2-62d5dc26baa61c5fa356a12ddd400ab3.png" width="1280" height="720" class="img_ev3q"></p>]]></content:encoded>
             <category>comet</category>
             <category>release</category>
         </item>
