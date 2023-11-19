@@ -83,6 +83,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [{ name: "twitter:card", content: "summary" }],
       image: "img/ogp.png",
       navbar: {
         title: "Rubydog",
