@@ -60,7 +60,7 @@ const currentPath = Astro.url.pathname;
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
-      if (!hamburger.contains(e.target) && !navbarMenu.contains(e.target)) {
+      if (e.target instanceof Node && !hamburger.contains(e.target) && !navbarMenu.contains(e.target)) {
         hamburger.classList.remove('active');
         navbarMenu.classList.remove('active');
       }
