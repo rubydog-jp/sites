@@ -1,0 +1,135 @@
+---
+import PageLayout from './PageLayout.astro';
+
+const { frontmatter } = Astro.props;
+---
+
+<PageLayout title={frontmatter.title} description={frontmatter.description}>
+  <article class="markdown-content">
+    <slot />
+  </article>
+</PageLayout>
+
+<style>
+  .markdown-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    line-height: 1.6;
+  }
+
+  .markdown-content :global(h1) {
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .markdown-content :global(h2) {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #444;
+  }
+
+  .markdown-content :global(h3) {
+    font-size: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+  }
+
+  .markdown-content :global(p) {
+    margin-bottom: 1rem;
+  }
+
+  .markdown-content :global(img) {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5rem auto;
+  }
+
+  .markdown-content :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+  }
+
+  .markdown-content :global(th),
+  .markdown-content :global(td) {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: left;
+  }
+
+  .markdown-content :global(th) {
+    background-color: #f5f5f5;
+    font-weight: bold;
+  }
+
+  .markdown-content :global(ul),
+  .markdown-content :global(ol) {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .markdown-content :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  .markdown-content :global(a:not(.linkbutton)) {
+    color: var(--ifm-color-primary);
+    text-decoration: none;
+  }
+
+  .markdown-content :global(a:not(.linkbutton):hover) {
+    text-decoration: underline;
+  }
+
+  /* linkbuttonスタイルを確実に適用 */
+  .markdown-content :global(a.linkbutton) {
+    color: #ffffff !important;
+    background-color: #27acd9;
+    border: 2px solid #27acd9;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.875rem 1.75rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(39, 172, 217, 0.3);
+    font-size: 1rem;
+  }
+
+  .markdown-content :global(a.linkbutton:hover) {
+    color: #ffffff !important;
+    background-color: #1e8bb5;
+    border-color: #1e8bb5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(39, 172, 217, 0.4);
+    text-decoration: none;
+  }
+
+  .markdown-content :global(hr) {
+    margin: 2rem 0;
+    border: none;
+    border-top: 1px solid #ddd;
+  }
+
+  .markdown-content :global(.tip) {
+    background-color: #e7f3ff;
+    border-left: 4px solid #2196f3;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+  }
+
+  .markdown-content :global(.tip::before) {
+    content: "💡 プロジェクト参加は可能！";
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+</style>

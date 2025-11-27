@@ -1,0 +1,195 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+
+const cards = [
+  { image: '/img/youtube.png', title: '動画' },
+  { image: '/img/note-for-flutter.png', title: 'Flutter' },
+  { image: '/img/hunny-cell.png', title: '共同開発' }
+];
+---
+
+<BaseLayout title="Home">
+  <div class="background">
+    <div class="body">
+      <div class="rubydog-home">
+        <p class="rubydog-home-text">Rubydog</p>
+        <img src="/img/house.png" class="rubydog-home-image" alt="Home" />
+        <p class="rubydog-home-text">Home</p>
+      </div>
+
+      <div class="gap"></div>
+
+      <a href="/products" class="enter-button">Enter</a>
+
+      <div class="carousel-container">
+        <div class="carousel">
+          {cards.map((card) => (
+            <div class="card-page">
+              <div class="card">
+                <img src={card.image} class="card-image" alt={card.title} />
+                <p class="card-text">{card.title}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+  <Footer />
+</BaseLayout>
+
+<style>
+  :global(body) {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e32d39 0%, #e4000f 100%);
+  }
+
+  .body {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+
+  .rubydog-home {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .rubydog-home-text {
+    color: white;
+    font-size: 28px;
+    margin: 0;
+    line-height: 1;
+  }
+
+  .rubydog-home-image {
+    width: 40px;
+    height: auto;
+    margin: 0 10px;
+    filter: brightness(0) invert(1);
+  }
+
+  .gap {
+    height: 30px;
+  }
+
+  .enter-button {
+    background-color: #2196f3;
+    border: 3px solid #ffffff;
+    border-radius: 100px;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 12px 48px;
+    text-transform: none;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.05em;
+  }
+
+  .enter-button:hover {
+    background-color: #1976d2;
+    border-color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .carousel-container {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .card-page {
+    flex-shrink: 0;
+    width: 140px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    width: 120px;
+    height: 120px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .card:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  .card-image {
+    width: 90px;
+    height: 60px;
+    margin-bottom: 10px;
+    object-fit: contain;
+  }
+
+  .card-text {
+    color: #777;
+    font-size: 20px;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .rubydog-home-text {
+      font-size: 20px;
+    }
+
+    .rubydog-home-image {
+      width: 30px;
+    }
+
+    .enter-button {
+      font-size: 1.2rem;
+      padding: 6px 30px;
+    }
+
+    .carousel {
+      justify-content: flex-start;
+      padding: 20px;
+    }
+  }
+</style>

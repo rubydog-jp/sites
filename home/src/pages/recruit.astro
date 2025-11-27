@@ -1,0 +1,195 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const recruitItems = [
+  {
+    icon: '/recruit/hunny-icon.png',
+    name: 'ハニー',
+    description: '共同開発のチュートリアル'
+  },
+  {
+    icon: '/recruit/comet-icon.png',
+    name: 'Comet',
+    description: 'Flutterで作られた静的サイトジェネレーター'
+  },
+  {
+    icon: '/recruit/appflowy-icon.png',
+    name: 'AppFlowy(外部)',
+    description: 'オープンソース版のNotion'
+  },
+  {
+    icon: null,
+    name: 'マグネタリウム',
+    description: '宇宙磁石とプラネタリウムのゲーム'
+  }
+];
+---
+
+<PageLayout title="参加">
+  <article class="recruit-content">
+    <h1>共同開発プロジェクト</h1>
+
+    <img src="/recruit/developers.png" alt="Developers" class="header-image" />
+
+    <p>
+      どなたでも気軽に参加できますので、気になったプロジェクトがあれば是非 <strong>共同開発への参加</strong> をご検討ください。<br />
+      どれもゆるいライセンスですので、<br />
+      やがては自分のものとして派生プロジェクトを作り直したり名前を変えることも自由です。
+    </p>
+
+    <br />
+
+    <table class="recruit-table">
+      <thead>
+        <tr>
+          <th>アイコン</th>
+          <th>名前</th>
+          <th>説明</th>
+        </tr>
+      </thead>
+      <tbody>
+        {recruitItems.map(item => (
+          <tr>
+            <td>
+              {item.icon ? (
+                <img src={item.icon} alt={item.name} width="120" />
+              ) : (
+                '?'
+              )}
+            </td>
+            <td>{item.name}</td>
+            <td>{item.description}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+
+    <br />
+
+    <hr />
+
+    <h1>ハニー</h1>
+
+    <p>
+      まずはここから！ 初めて共同開発へ参加する方に向けた Git を使った共同開発のチュートリアルです。<br />
+      Git を使った共同開発のチュートリアル
+    </p>
+
+    <p><strong>技術キーワード</strong> <code>Git</code> , <code>GitHub</code></p>
+
+    <a href="https://rubydog-jp.github.io/hunny/" class='linkbutton'>ハニーを体験してみる</a>
+
+    <br />
+
+    <hr />
+
+    <h1>Comet コメット</h1>
+
+    <p>
+      10 分で自分のサイトを公開できる！準備が必要なものは <strong>Flutter</strong>, <strong>Git</strong>, <strong>GitHub</strong> のみ。<br />
+      アプリを Flutter で作ったら、公式サイトもついでに作っちゃおう！
+    </p>
+
+    <p><strong>技術キーワード</strong> <code>Flutter</code></p>
+
+    <a href="https://comet.rubydog.jp/" class='linkbutton'>Cometを使ってみる</a>
+
+    <br />
+
+    <p>Cometの共同開発へ参加されるは、以下のページをお読みください</p>
+
+    <a href="https://comet.rubydog.jp/docs-jp/oss-contributing/" class='linkbutton'>共同開発スタッフの皆様へ</a>
+
+    <br />
+
+    <hr />
+
+    <h1>AppFlowy アップフロウィー</h1>
+
+    <p>
+      オープンソース版の Notion として注目が集まっています。<br />
+      ルビードッグが開発元ではありませんが、推しの OSS として皆様の参加をサポートしています。
+    </p>
+
+    <p><strong>技術キーワード</strong> <code>Flutter</code> , <code>Rust</code> , <code>Tauri</code></p>
+
+    <a href="https://appflowy.io/" class='linkbutton'>AppFlowy公式サイトへ</a>
+
+    <br />
+
+    <hr />
+
+    <h1>マグネタリウム</h1>
+
+    <p>- 準備中です</p>
+
+    <br />
+  </article>
+</PageLayout>
+
+<style>
+  .recruit-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  .header-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5rem auto;
+  }
+
+  .recruit-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+  }
+
+  .recruit-table th,
+  .recruit-table td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: left;
+  }
+
+  .recruit-table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+  }
+
+  .recruit-table td img {
+    display: block;
+    margin: 0;
+  }
+
+  code {
+    background-color: #f5f5f5;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: monospace;
+  }
+
+  hr {
+    margin: 2rem 0;
+    border: none;
+    border-top: 1px solid #ddd;
+  }
+
+  .linkbutton {
+    margin: 1rem 0;
+  }
+</style>

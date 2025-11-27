@@ -1,0 +1,97 @@
+---
+const navItems = [
+  { label: '製品', href: '/products' },
+  { label: '参加', href: '/recruit' },
+  { label: 'ニュース', href: '/news' },
+  { label: 'お問い合わせ', href: '/contact' }
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="/" class="navbar-brand">
+      <img src="/img/rubydog-home.png" alt="Rubydog Logo" class="navbar-logo" />
+      <span class="navbar-title">Rubydog</span>
+    </a>
+    <ul class="navbar-menu">
+      {navItems.map(item => (
+        <li>
+          <a
+            href={item.href}
+            class:list={['navbar-link', { active: currentPath.startsWith(item.href) }]}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .navbar {
+    background-color: #fff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .navbar-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .navbar-logo {
+    height: 40px;
+    width: auto;
+  }
+
+  .navbar-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #000;
+  }
+
+  .navbar-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar-link {
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .navbar-link:hover,
+  .navbar-link.active {
+    color: var(--ifm-color-primary);
+  }
+
+  @media (max-width: 768px) {
+    .navbar-menu {
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>

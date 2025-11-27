@@ -1,3 +1,3 @@
-# Rubydog ホームページ
+# Rubydog Sites
 
-https://rubydog.jp/
+Rubydogの各種ウェブサイトを管理するリポジトリです.

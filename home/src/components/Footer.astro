@@ -1,0 +1,124 @@
+---
+type FooterLink = {
+  label: string;
+  href: string;
+  external?: boolean;
+};
+
+type FooterSection = {
+  title: string;
+  items: FooterLink[];
+};
+
+const footerLinks: FooterSection[] = [
+  {
+    title: 'Rubydog',
+    items: [
+      { label: 'コミュニティ概要', href: '/about' },
+      { label: '個人プロフィール', href: '/profile' }
+    ]
+  },
+  {
+    title: '採用情報',
+    items: [
+      { label: '採用ページ', href: '/recruit-old' }
+    ]
+  },
+  {
+    title: '外部リンク',
+    items: [
+      { label: 'GitHub', href: 'https://github.com/rubydog-jp', external: true },
+      { label: 'Youtube', href: 'https://www.youtube.com/@rbdog', external: true }
+    ]
+  }
+];
+---
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-links">
+      {footerLinks.map(section => (
+        <div class="footer-section">
+          <h4 class="footer-title">{section.title}</h4>
+          <ul class="footer-list">
+            {section.items.map(item => (
+              <li>
+                <a
+                  href={item.href}
+                  class="footer-link"
+                  target={item.external ? '_blank' : undefined}
+                  rel={item.external ? 'noopener noreferrer' : undefined}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <div class="footer-copyright">
+      Copyright © 2023 Rubydog. Built with Astro.
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: #242526;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 3rem 0 1.5rem;
+  }
+
+  .footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-title {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-list li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-link {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-link:hover {
+    color: #fff;
+  }
+
+  .footer-copyright {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+  }
+</style>

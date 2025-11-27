@@ -1,0 +1,124 @@
+---
+import { getCollection } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import PageLayout from '../../layouts/PageLayout.astro';
+
+export const getStaticPaths = (async () => {
+  const newsEntries = await getCollection('news');
+  return newsEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}) satisfies GetStaticPaths;
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+function formatDate(date: Date): string {
+  return new Intl.DateTimeFormat('ja-JP', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  }).format(date);
+}
+---
+
+<PageLayout title={entry.data.title}>
+  <article class="news-article">
+    <header class="news-header">
+      <h1>{entry.data.title}</h1>
+      <time class="news-date" datetime={entry.data.date.toISOString()}>
+        {formatDate(entry.data.date)}
+      </time>
+      {entry.data.tags && (
+        <div class="news-tags">
+          {entry.data.tags.map((tag) => (
+            <span class="tag">{tag}</span>
+          ))}
+        </div>
+      )}
+    </header>
+
+    <div class="news-content">
+      <Content />
+    </div>
+
+    <footer class="news-footer">
+      <a href="/news" class="back-link">← ニュース一覧に戻る</a>
+    </footer>
+  </article>
+</PageLayout>
+
+<style>
+  .news-article {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  .news-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    color: #333;
+  }
+
+  .news-date {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.75rem;
+  }
+
+  .news-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    background-color: #e7f3ff;
+    color: #2196f3;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+  }
+
+  .news-content {
+    line-height: 1.6;
+    margin-bottom: 3rem;
+  }
+
+  .news-content :global(img) {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5rem auto;
+    border-radius: 8px;
+  }
+
+  .news-content :global(p) {
+    margin-bottom: 1rem;
+  }
+
+  .news-footer {
+    padding-top: 2rem;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .back-link {
+    color: var(--ifm-color-primary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .back-link:hover {
+    color: var(--ifm-color-primary-dark);
+    text-decoration: underline;
+  }
+</style>

@@ -9,7 +9,7 @@
     "sitemap.xml": true,
     "markdown-page": true,
     "assets": true,
-    "404.html": true,
+    "404.html": true
   },
   // JS
   "[javascript]": {
@@ -18,4 +18,5 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "cSpell.words": ["Rubydog"]
 }
