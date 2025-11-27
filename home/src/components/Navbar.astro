@@ -1,7 +1,6 @@
 ---
 const navItems = [
   { label: '製品', href: '/products' },
-  { label: '参加', href: '/recruit' },
   { label: 'ニュース', href: '/news' },
   { label: 'お問い合わせ', href: '/contact' }
 ];
@@ -12,10 +11,19 @@ const currentPath = Astro.url.pathname;
 <nav class="navbar">
   <div class="navbar-container">
     <a href="/" class="navbar-brand">
-      <img src="/img/rubydog-home.png" alt="Rubydog Logo" class="navbar-logo" />
+      <img src="/img/profile.png" alt="Rubydog Logo" class="navbar-logo" />
       <span class="navbar-title">Rubydog</span>
     </a>
-    <ul class="navbar-menu">
+
+    <!-- Hamburger Button -->
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Navigation Menu -->
+    <ul class="navbar-menu" id="navbar-menu">
       {navItems.map(item => (
         <li>
           <a
@@ -30,10 +38,40 @@ const currentPath = Astro.url.pathname;
   </div>
 </nav>
 
+<script>
+  // Hamburger menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const navbarMenu = document.getElementById('navbar-menu');
+
+  if (hamburger && navbarMenu) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navbarMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking on a link
+    const navLinks = navbarMenu.querySelectorAll('.navbar-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navbarMenu.classList.remove('active');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !navbarMenu.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navbarMenu.classList.remove('active');
+      }
+    });
+  }
+</script>
+
 <style>
   .navbar {
-    background-color: #fff;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    background-color: #EA4036;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -65,33 +103,121 @@ const currentPath = Astro.url.pathname;
   .navbar-title {
     font-size: 1.25rem;
     font-weight: bold;
-    color: #000;
+    color: #ffffff;
+  }
+
+  /* Hamburger Button */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 101;
+  }
+
+  .hamburger span {
+    width: 100%;
+    height: 3px;
+    background: #ffffff;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
   }
 
   .navbar-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 0;
     margin: 0;
     padding: 0;
+    height: 100%;
+  }
+
+  .navbar-menu li {
+    height: 100%;
+    display: flex;
+    align-items: center;
   }
 
   .navbar-link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 2rem;
     text-decoration: none;
-    color: #666;
+    color: #ffffff;
     font-weight: 500;
-    transition: color 0.2s;
+    transition: all 0.2s ease;
+    opacity: 0.9;
   }
 
-  .navbar-link:hover,
+  .navbar-link:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
   .navbar-link.active {
-    color: var(--ifm-color-primary);
+    opacity: 1;
+    background-color: #ffffff;
+    color: #EA4036;
   }
 
   @media (max-width: 768px) {
+    .hamburger {
+      display: flex;
+    }
+
     .navbar-menu {
-      gap: 1rem;
-      font-size: 0.9rem;
+      position: fixed;
+      top: 60px;
+      right: 0;
+      width: 250px;
+      height: calc(100vh - 60px);
+      background-color: #EA4036;
+      flex-direction: column;
+      gap: 0;
+      padding: 1rem 0;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+      overflow-y: auto;
+    }
+
+    .navbar-menu.active {
+      transform: translateX(0);
+    }
+
+    .navbar-menu li {
+      width: 100%;
+      height: auto;
+    }
+
+    .navbar-link {
+      width: 100%;
+      padding: 1rem 1.5rem;
+      justify-content: flex-start;
+    }
+
+    .navbar-link.active {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      border-left: 4px solid #ffffff;
     }
   }
 </style>

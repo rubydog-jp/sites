@@ -169,6 +169,13 @@ declare module 'astro:content' {
   collection: "news";
   data: InferEntrySchema<"news">
 } & { render(): Render[".md"] };
+"20251231_timetable-25_1_0.md": {
+	id: "20251231_timetable-25_1_0.md";
+  slug: "20251231_timetable-25_1_0";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".md"] };
 };
 
 	};

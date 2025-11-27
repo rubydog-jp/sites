@@ -1,195 +1,566 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Footer from '../components/Footer.astro';
+import PageLayout from '../layouts/PageLayout.astro';
 
-const cards = [
-  { image: '/img/youtube.png', title: '動画' },
-  { image: '/img/note-for-flutter.png', title: 'Flutter' },
-  { image: '/img/hunny-cell.png', title: '共同開発' }
+const communityInfo = {
+  name: 'Rubydog',
+  established: '2023年10月31日',
+  location: 'オンラインのみの活動',
+  representative: 'ルビーDog',
+  staff: '1名',
+  activities: '動画配信、ソフトウェア開発'
+};
+
+const features = [
+  {
+    icon: '🎥',
+    title: 'Youtube',
+    description: 'IT技術の解説動画を配信',
+    link: '/products#youtube'
+  },
+  {
+    icon: '📱',
+    title: 'アプリ開発',
+    description: 'Flutterを中心とした開発',
+    link: '/products'
+  },
+  {
+    icon: '🤝',
+    title: '共同開発',
+    description: 'オープンソースプロジェクト',
+    link: '/recruit'
+  },
+  {
+    icon: '📰',
+    title: 'ニュース',
+    description: '最新情報をお届け',
+    link: '/news'
+  }
+];
+
+const socialLinks = [
+  {
+    name: 'GitHub',
+    url: 'https://github.com/rubydog-jp/',
+    icon: '🐙',
+    color: '#333'
+  },
+  {
+    name: 'Youtube',
+    url: 'https://youtube.com/@rbdog/',
+    icon: '▶️',
+    color: '#FF0000'
+  },
+  {
+    name: 'X',
+    url: 'https://x.com/rubydog_jp/',
+    icon: '𝕏',
+    color: '#000'
+  }
 ];
 ---
 
-<BaseLayout title="Home">
-  <div class="background">
-    <div class="body">
-      <div class="rubydog-home">
-        <p class="rubydog-home-text">Rubydog</p>
-        <img src="/img/house.png" class="rubydog-home-image" alt="Home" />
-        <p class="rubydog-home-text">Home</p>
-      </div>
-
-      <div class="gap"></div>
-
-      <a href="/products" class="enter-button">Enter</a>
-
-      <div class="carousel-container">
-        <div class="carousel">
-          {cards.map((card) => (
-            <div class="card-page">
-              <div class="card">
-                <img src={card.image} class="card-image" alt={card.title} />
-                <p class="card-text">{card.title}</p>
-              </div>
-            </div>
-          ))}
+<PageLayout title="Rubydog" description="ソフトウェア技術をもっと分かりやすく">
+  <div class="home-container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">
+            <span class="title-line">ソフトウェア技術を</span>
+            <span class="title-line gradient-text">もっと分かりやすく</span>
+          </h1>
+          <p class="hero-description">
+            ご訪問いただきありがとうございます。いつもお世話になっております、ルビーDogです。<br />
+            弊コミュニティは「ソフトウェア技術をもっと分かりやすく」をテーマに、あらゆる分野の専門的な知識や技術を一般向けにまとめ、より多くの人々に平等に行き渡るようにすることを目的として活動してます。
+          </p>
+          <div class="hero-actions">
+            <a href="/products" class="cta-button primary">
+              活動を見る
+            </a>
+            <a href="/recruit" class="cta-button secondary">
+              参加する
+            </a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="/img/profile.png" alt="Rubydog" />
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <h2 class="section-title">主な活動</h2>
+      <div class="features-grid">
+        {features.map(feature => (
+          <a href={feature.link} class="feature-card">
+            <div class="feature-icon">{feature.icon}</div>
+            <h3 class="feature-title">{feature.title}</h3>
+            <p class="feature-description">{feature.description}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Community Info Section -->
+    <section class="community-info">
+      <h2 class="section-title">コミュニティ概要</h2>
+      <div class="info-card">
+        <div class="info-grid">
+          <div class="info-item">
+            <span class="info-label">正式名</span>
+            <span class="info-value">{communityInfo.name}</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">設立日</span>
+            <span class="info-value">{communityInfo.established}</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">所在地</span>
+            <span class="info-value">{communityInfo.location}</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">代表者</span>
+            <span class="info-value">{communityInfo.representative}</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">スタッフ数</span>
+            <span class="info-value">{communityInfo.staff}</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">活動内容</span>
+            <span class="info-value">{communityInfo.activities}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline">
+      <h2 class="section-title">沿革</h2>
+      <div class="timeline-container">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <time class="timeline-date">2023年10月31日</time>
+            <p class="timeline-text">
+              ルビーDogが共同開発用のコミュニティ、または相談窓口として設立。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Links Section -->
+    <section class="social-section">
+      <h2 class="section-title">各種リンク</h2>
+      <div class="social-links">
+        {socialLinks.map(link => (
+          <a
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-card"
+            style={`border-top: 4px solid ${link.color}`}
+          >
+            <div class="social-icon">{link.icon}</div>
+            <div class="social-name">{link.name}</div>
+            <div class="social-url">{link.url}</div>
+          </a>
+        ))}
+      </div>
+    </section>
   </div>
-  <Footer />
-</BaseLayout>
+</PageLayout>
 
 <style>
-  :global(body) {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
-
-  .background {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #e32d39 0%, #e4000f 100%);
-  }
-
-  .body {
-    max-width: 1000px;
+  .home-container {
     width: 100%;
+  }
+
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, #EA4036 0%, #c93530 100%);
+    color: white;
+    padding: 4rem 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  }
+
+  .hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-text {
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .title-line {
+    display: block;
+  }
+
+  .gradient-text {
+    background: linear-gradient(90deg, #ffffff 0%, #ffcccc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    opacity: 0.95;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 1rem;
+  }
+
+  .cta-button.primary {
+    background: white;
+    color: #EA4036;
+  }
+
+  .cta-button.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .cta-button.secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+  }
+
+  .cta-button.secondary:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+  }
+
+  .hero-image {
+    display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    padding: 2rem 1rem;
   }
 
-  .rubydog-home {
-    display: flex;
-    align-items: flex-end;
-  }
-
-  .rubydog-home-text {
-    color: white;
-    font-size: 28px;
-    margin: 0;
-    line-height: 1;
-  }
-
-  .rubydog-home-image {
-    width: 40px;
+  .hero-image img {
+    width: 100%;
+    max-width: 400px;
     height: auto;
-    margin: 0 10px;
-    filter: brightness(0) invert(1);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: float 3s ease-in-out infinite;
+    padding: 2rem;
+    background: white;
+    box-sizing: border-box;
   }
 
-  .gap {
-    height: 30px;
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
   }
 
-  .enter-button {
-    background-color: #2196f3;
-    border: 3px solid #ffffff;
-    border-radius: 100px;
-    color: #ffffff;
+  /* Features Section */
+  .features {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #1a1a1a;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .feature-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+    transition: all 0.3s;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  }
+
+  .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-title {
     font-size: 1.5rem;
     font-weight: 600;
-    padding: 12px 48px;
-    text-transform: none;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: inline-block;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+    color: #1a1a1a;
   }
 
-  .enter-button:hover {
-    background-color: #1976d2;
-    border-color: #ffffff;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  .feature-description {
+    color: #666;
+    line-height: 1.6;
   }
 
-  .carousel-container {
-    overflow: hidden;
-    width: 100%;
-    margin-top: 30px;
+  /* Community Info Section */
+  .community-info {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+    background: #f8f9fa;
   }
 
-  .carousel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 20px 0;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
+  .info-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   }
 
-  .card-page {
-    flex-shrink: 0;
-    width: 140px;
-    height: 160px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
   }
 
-  .card {
-    width: 120px;
-    height: 120px;
-    background-color: #ffffff;
+  .info-item {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s ease;
-    cursor: pointer;
+    gap: 0.5rem;
   }
 
-  .card:hover {
-    transform: translateY(-8px) scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  .info-label {
+    font-size: 0.875rem;
+    color: #666;
+    font-weight: 500;
   }
 
-  .card-image {
-    width: 90px;
-    height: 60px;
-    margin-bottom: 10px;
-    object-fit: contain;
+  .info-value {
+    font-size: 1.125rem;
+    color: #1a1a1a;
+    font-weight: 600;
   }
 
-  .card-text {
-    color: #777;
-    font-size: 20px;
+  /* Timeline Section */
+  .timeline {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+  }
+
+  .timeline-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 2rem;
+    position: relative;
+  }
+
+  .timeline-marker {
+    width: 16px;
+    height: 16px;
+    background: #EA4036;
+    border-radius: 50%;
+    margin-top: 0.5rem;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 4px rgba(234, 64, 54, 0.2);
+  }
+
+  .timeline-content {
+    flex: 1;
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .timeline-date {
+    display: block;
+    font-size: 0.875rem;
+    color: #EA4036;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-text {
+    color: #333;
+    line-height: 1.7;
     margin: 0;
+  }
+
+  /* Social Links Section */
+  .social-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+    background: #f8f9fa;
+  }
+
+  .social-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .social-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .social-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .social-icon {
+    font-size: 2.5rem;
+  }
+
+  .social-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+
+  .social-url {
+    font-size: 0.875rem;
+    color: #666;
+    word-break: break-all;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 968px) {
+    .hero-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hero-text {
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .hero-actions {
+      justify-content: center;
+    }
+
+    .hero-image {
+      order: -1;
+    }
+
+    .hero-image img {
+      max-width: 300px;
+    }
   }
 
   @media (max-width: 768px) {
-    .rubydog-home-text {
-      font-size: 20px;
+    .hero {
+      padding: 3rem 1rem;
     }
 
-    .rubydog-home-image {
-      width: 30px;
+    .hero-title {
+      font-size: 2rem;
     }
 
-    .enter-button {
-      font-size: 1.2rem;
-      padding: 6px 30px;
+    .hero-description {
+      font-size: 1rem;
     }
 
-    .carousel {
-      justify-content: flex-start;
-      padding: 20px;
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .features,
+    .community-info,
+    .timeline,
+    .social-section {
+      padding: 3rem 1rem;
+    }
+
+    .info-card {
+      padding: 1.5rem;
+    }
+
+    .info-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .cta-button {
+      width: 100%;
     }
   }
 </style>

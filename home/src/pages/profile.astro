@@ -1,0 +1,417 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const techStack = [
+  {
+    category: 'スマホアプリ開発',
+    icon: '📱',
+    color: '#4A90E2',
+    technologies: [
+      { name: 'iOS', detail: 'Swift, Objective-C' },
+      { name: 'Android', detail: 'Java, Kotlin' },
+      { name: 'Flutter', detail: 'Dart' },
+      { name: 'Ionic', detail: 'Capacitor' }
+    ]
+  },
+  {
+    category: 'Webバックエンド',
+    icon: '⚙️',
+    color: '#50C878',
+    technologies: [
+      { name: 'Deno', detail: 'TypeScript' },
+      { name: 'FastAPI', detail: 'Python' },
+      { name: 'Node.js', detail: 'JavaScript' }
+    ]
+  },
+  {
+    category: 'Webフロントエンド',
+    icon: '🎨',
+    color: '#E94B3C',
+    technologies: [
+      { name: 'Next.js', detail: '' },
+      { name: 'React', detail: '' }
+    ]
+  },
+  {
+    category: 'ゲーム開発',
+    icon: '🎮',
+    color: '#9B59B6',
+    technologies: [
+      { name: 'Unity', detail: 'C#' }
+    ]
+  },
+  {
+    category: 'データベース',
+    icon: '🗄️',
+    color: '#F39C12',
+    technologies: [
+      { name: 'MySQL', detail: '' },
+      { name: 'PostgreSQL', detail: '' },
+      { name: 'MongoDB', detail: '' }
+    ]
+  },
+  {
+    category: 'クラウド',
+    icon: '☁️',
+    color: '#3498DB',
+    technologies: [
+      { name: 'AWS', detail: 'EC2, S3' },
+      { name: 'Google Cloud', detail: 'CloudRun, Firestore' },
+      { name: 'Firebase', detail: '全般' }
+    ]
+  },
+  {
+    category: 'コンテナ',
+    icon: '🐳',
+    color: '#2496ED',
+    technologies: [
+      { name: 'Docker', detail: '' }
+    ]
+  },
+  {
+    category: '趣味',
+    icon: '💡',
+    color: '#E74C3C',
+    technologies: [
+      { name: 'Rust', detail: '' },
+      { name: 'Mojo', detail: '' }
+    ]
+  }
+];
+
+const socialLinks = [
+  {
+    name: 'アカウント',
+    url: 'https://twitter.com/rbdog_v2',
+    icon: '𝕏',
+    color: '#000000'
+  }
+];
+---
+
+<PageLayout title="個人プロフィール">
+  <div class="profile-container">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="profile-card">
+        <div class="profile-image-wrapper">
+          <img src="/profile/rbdog.png" alt="ルビーDog" class="profile-image" />
+        </div>
+        <h1 class="profile-name">ルビーDog</h1>
+        <p class="profile-tagline">ソフトウェアエンジニア / クリエイター</p>
+
+        <div class="social-links">
+          {socialLinks.map(link => (
+            <a
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-link"
+              style={`background: ${link.color}`}
+            >
+              <span class="social-icon">{link.icon}</span>
+              <span class="social-name">{link.name}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack-section">
+      <h2 class="section-title">技術スタック</h2>
+
+      <div class="tech-grid">
+        {techStack.map(category => (
+          <div class="tech-category-card">
+            <div class="category-header" style={`border-left: 4px solid ${category.color}`}>
+              <span class="category-icon">{category.icon}</span>
+              <h3 class="category-title">{category.category}</h3>
+            </div>
+            <div class="technologies-list">
+              {category.technologies.map(tech => (
+                <div class="tech-item">
+                  <span class="tech-name">{tech.name}</span>
+                  {tech.detail && (
+                    <span class="tech-detail">{tech.detail}</span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+</PageLayout>
+
+<style>
+  .profile-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+  }
+
+  .profile-card {
+    background: linear-gradient(135deg, #FFBA00 0%, #FF9500 100%);
+    border-radius: 20px;
+    padding: 3rem 4rem;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .profile-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: pulse 15s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    50% {
+      transform: translate(-20px, -20px) scale(1.1);
+    }
+  }
+
+  .profile-image-wrapper {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .profile-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+  }
+
+  .profile-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+  }
+
+  .profile-tagline {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: #000;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .social-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  .social-icon {
+    font-size: 1.25rem;
+  }
+
+  .social-name {
+    font-size: 0.95rem;
+  }
+
+  /* Tech Stack Section */
+  .tech-stack-section {
+    margin-top: 3rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+  }
+
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #FFBA00 0%, #FF9500 100%);
+    border-radius: 2px;
+  }
+
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .tech-category-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s;
+    border: 1px solid #e9ecef;
+  }
+
+  .tech-category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    padding-left: 0.75rem;
+  }
+
+  .category-icon {
+    font-size: 1.5rem;
+  }
+
+  .category-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0;
+  }
+
+  .technologies-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .tech-item {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    transition: all 0.2s;
+  }
+
+  .tech-item:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+  }
+
+  .tech-name {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95rem;
+  }
+
+  .tech-detail {
+    font-size: 0.85rem;
+    color: #666;
+    margin-left: 0.5rem;
+  }
+
+  .tech-detail::before {
+    content: '•';
+    margin-right: 0.5rem;
+    color: #999;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .profile-container {
+      padding: 1rem;
+    }
+
+    .profile-card {
+      padding: 2rem 1.5rem;
+    }
+
+    .profile-name {
+      font-size: 2rem;
+    }
+
+    .profile-image-wrapper {
+      width: 120px;
+      height: 120px;
+    }
+
+    .social-links {
+      flex-direction: column;
+    }
+
+    .social-link {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .tech-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .profile-card {
+      padding: 1.5rem 1rem;
+      border-radius: 16px;
+    }
+
+    .profile-name {
+      font-size: 1.75rem;
+    }
+
+    .profile-tagline {
+      font-size: 1rem;
+    }
+  }
+</style>

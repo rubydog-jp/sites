@@ -1,6 +1,15 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 
+const sections = [
+  { id: 'overview', title: '共同開発プロジェクト' },
+  { id: 'hunny', title: 'ハニー' },
+  { id: 'comet', title: 'Comet' },
+  { id: 'appflowy', title: 'AppFlowy' },
+  { id: 'magnetarium', title: 'マグネタリウム' },
+  { id: 'recruitment', title: '採用情報' }
+];
+
 const recruitItems = [
   {
     icon: '/recruit/hunny-icon.png',
@@ -26,170 +35,459 @@ const recruitItems = [
 ---
 
 <PageLayout title="参加">
-  <article class="recruit-content">
-    <h1>共同開発プロジェクト</h1>
+  <div class="recruit-container">
+    <!-- Table of Contents -->
+    <aside class="toc">
+      <nav class="toc-nav">
+        <h3 class="toc-title">目次</h3>
+        <ul class="toc-list">
+          {sections.map(section => (
+            <li>
+              <a href={`#${section.id}`} class="toc-link">{section.title}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </aside>
 
-    <img src="/recruit/developers.png" alt="Developers" class="header-image" />
+    <!-- Main Content -->
+    <main class="content">
+      <header class="page-header">
+        <h1>コミュニティ参加</h1>
+        <p class="page-description">共同開発プロジェクトへの参加をお待ちしています</p>
+      </header>
 
-    <p>
-      どなたでも気軽に参加できますので、気になったプロジェクトがあれば是非 <strong>共同開発への参加</strong> をご検討ください。<br />
-      どれもゆるいライセンスですので、<br />
-      やがては自分のものとして派生プロジェクトを作り直したり名前を変えることも自由です。
-    </p>
+      <!-- Overview Section -->
+      <section id="overview" class="project-section">
+        <div class="section-header">
+          <h2>共同開発プロジェクト</h2>
+        </div>
+        <div class="section-content">
+          <div class="media-container">
+            <img src="/recruit/developers.png" alt="Developers" />
+          </div>
+          <p>
+            どなたでも気軽に参加できますので、気になったプロジェクトがあれば是非 <strong>共同開発への参加</strong> をご検討ください。<br />
+            どれもゆるいライセンスですので、<br />
+            やがては自分のものとして派生プロジェクトを作り直したり名前を変えることも自由です。
+          </p>
 
-    <br />
+          <div class="projects-grid">
+            {recruitItems.map(item => (
+              <div class="project-card">
+                <div class="project-icon">
+                  {item.icon ? (
+                    <img src={item.icon} alt={item.name} />
+                  ) : (
+                    <div class="icon-placeholder">?</div>
+                  )}
+                </div>
+                <h3 class="project-name">{item.name}</h3>
+                <p class="project-description">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-    <table class="recruit-table">
-      <thead>
-        <tr>
-          <th>アイコン</th>
-          <th>名前</th>
-          <th>説明</th>
-        </tr>
-      </thead>
-      <tbody>
-        {recruitItems.map(item => (
-          <tr>
-            <td>
-              {item.icon ? (
-                <img src={item.icon} alt={item.name} width="120" />
-              ) : (
-                '?'
-              )}
-            </td>
-            <td>{item.name}</td>
-            <td>{item.description}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+      <!-- Hunny Section -->
+      <section id="hunny" class="project-section">
+        <div class="section-header">
+          <h2>ハニー</h2>
+        </div>
+        <div class="section-content">
+          <p>
+            まずはここから！ 初めて共同開発へ参加する方に向けた Git を使った共同開発のチュートリアルです。<br />
+          </p>
+          <div class="tech-tags">
+            <span class="tech-tag">Git</span>
+            <span class="tech-tag">GitHub</span>
+          </div>
+          <a href="https://rubydog-jp.github.io/hunny/" target="_blank" rel="noopener noreferrer" class="link-button">
+            ハニーを体験してみる
+          </a>
+        </div>
+      </section>
 
-    <br />
+      <!-- Comet Section -->
+      <section id="comet" class="project-section">
+        <div class="section-header">
+          <h2>Comet <span class="subtitle">コメット</span></h2>
+        </div>
+        <div class="section-content">
+          <p>
+            10 分で自分のサイトを公開できる！準備が必要なものは <strong>Flutter</strong>, <strong>Git</strong>, <strong>GitHub</strong> のみ。<br />
+            アプリを Flutter で作ったら、公式サイトもついでに作っちゃおう！
+          </p>
+          <div class="tech-tags">
+            <span class="tech-tag">Flutter</span>
+          </div>
+          <a href="https://comet.rubydog.jp/" target="_blank" rel="noopener noreferrer" class="link-button">
+            Cometを使ってみる
+          </a>
+          <div class="additional-info">
+            <p>Cometの共同開発へ参加されるは、以下のページをお読みください</p>
+            <a href="https://comet.rubydog.jp/docs-jp/oss-contributing/" target="_blank" rel="noopener noreferrer" class="link-button secondary">
+              共同開発スタッフの皆様へ
+            </a>
+          </div>
+        </div>
+      </section>
 
-    <hr />
+      <!-- AppFlowy Section -->
+      <section id="appflowy" class="project-section">
+        <div class="section-header">
+          <h2>AppFlowy <span class="subtitle">アップフロウィー</span></h2>
+        </div>
+        <div class="section-content">
+          <p>
+            オープンソース版の Notion として注目が集まっています。<br />
+            ルビードッグが開発元ではありませんが、推しの OSS として皆様の参加をサポートしています。
+          </p>
+          <div class="tech-tags">
+            <span class="tech-tag">Flutter</span>
+            <span class="tech-tag">Rust</span>
+            <span class="tech-tag">Tauri</span>
+          </div>
+          <a href="https://appflowy.io/" target="_blank" rel="noopener noreferrer" class="link-button">
+            AppFlowy公式サイトへ
+          </a>
+        </div>
+      </section>
 
-    <h1>ハニー</h1>
+      <!-- Magnetarium Section -->
+      <section id="magnetarium" class="project-section">
+        <div class="section-header">
+          <h2>マグネタリウム</h2>
+        </div>
+        <div class="section-content">
+          <p>準備中です</p>
+        </div>
+      </section>
 
-    <p>
-      まずはここから！ 初めて共同開発へ参加する方に向けた Git を使った共同開発のチュートリアルです。<br />
-      Git を使った共同開発のチュートリアル
-    </p>
-
-    <p><strong>技術キーワード</strong> <code>Git</code> , <code>GitHub</code></p>
-
-    <a href="https://rubydog-jp.github.io/hunny/" class='linkbutton'>ハニーを体験してみる</a>
-
-    <br />
-
-    <hr />
-
-    <h1>Comet コメット</h1>
-
-    <p>
-      10 分で自分のサイトを公開できる！準備が必要なものは <strong>Flutter</strong>, <strong>Git</strong>, <strong>GitHub</strong> のみ。<br />
-      アプリを Flutter で作ったら、公式サイトもついでに作っちゃおう！
-    </p>
-
-    <p><strong>技術キーワード</strong> <code>Flutter</code></p>
-
-    <a href="https://comet.rubydog.jp/" class='linkbutton'>Cometを使ってみる</a>
-
-    <br />
-
-    <p>Cometの共同開発へ参加されるは、以下のページをお読みください</p>
-
-    <a href="https://comet.rubydog.jp/docs-jp/oss-contributing/" class='linkbutton'>共同開発スタッフの皆様へ</a>
-
-    <br />
-
-    <hr />
-
-    <h1>AppFlowy アップフロウィー</h1>
-
-    <p>
-      オープンソース版の Notion として注目が集まっています。<br />
-      ルビードッグが開発元ではありませんが、推しの OSS として皆様の参加をサポートしています。
-    </p>
-
-    <p><strong>技術キーワード</strong> <code>Flutter</code> , <code>Rust</code> , <code>Tauri</code></p>
-
-    <a href="https://appflowy.io/" class='linkbutton'>AppFlowy公式サイトへ</a>
-
-    <br />
-
-    <hr />
-
-    <h1>マグネタリウム</h1>
-
-    <p>- 準備中です</p>
-
-    <br />
-  </article>
+      <!-- Recruitment Section -->
+      <section id="recruitment" class="project-section recruitment-section">
+        <div class="section-header">
+          <h2>採用情報</h2>
+        </div>
+        <div class="section-content">
+          <div class="notice-box">
+            <p>
+              弊コミュニティにご関心いただき、誠にありがとうございます。<br />
+              大変申し訳ございませんが、現在有給でのスタッフの求人募集は行っておりません。<br />
+              募集の際は当ページにてご案内いたします。
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
 </PageLayout>
 
 <style>
-  .recruit-content {
-    max-width: 900px;
+  .recruit-container {
+    max-width: 1280px;
     margin: 0 auto;
     padding: 2rem 1rem;
-    line-height: 1.6;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 3rem;
   }
 
-  h1 {
-    font-size: 2rem;
-    margin-top: 2rem;
+  /* Table of Contents */
+  .toc {
+    position: sticky;
+    top: 80px;
+    align-self: start;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+  }
+
+  .toc-nav {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+
+  .toc-title {
+    font-size: 1rem;
+    font-weight: 600;
     margin-bottom: 1rem;
-    color: #333;
+    color: #1a1a1a;
   }
 
-  p {
-    margin-bottom: 1rem;
-  }
-
-  .header-image {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 1.5rem auto;
-  }
-
-  .recruit-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1.5rem 0;
-  }
-
-  .recruit-table th,
-  .recruit-table td {
-    border: 1px solid #ddd;
-    padding: 0.75rem;
-    text-align: left;
-  }
-
-  .recruit-table th {
-    background-color: #f5f5f5;
-    font-weight: bold;
-  }
-
-  .recruit-table td img {
-    display: block;
+  .toc-list {
+    list-style: none;
+    padding: 0;
     margin: 0;
   }
 
-  code {
-    background-color: #f5f5f5;
-    padding: 0.2rem 0.4rem;
-    border-radius: 3px;
-    font-family: monospace;
+  .toc-list > li {
+    margin-bottom: 0.5rem;
   }
 
-  hr {
-    margin: 2rem 0;
-    border: none;
-    border-top: 1px solid #ddd;
+  .toc-link {
+    display: block;
+    color: #666;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s;
+    font-size: 0.95rem;
   }
 
-  .linkbutton {
-    margin: 1rem 0;
+  .toc-link:hover {
+    background: #e9ecef;
+    color: #EA4036;
+  }
+
+  /* Main Content */
+  .content {
+    min-width: 0;
+  }
+
+  .page-header {
+    margin-bottom: 3rem;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+  }
+
+  .page-description {
+    font-size: 1.125rem;
+    color: #666;
+  }
+
+  /* Project Sections */
+  .project-section {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+    transition: box-shadow 0.3s;
+  }
+
+  .project-section:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  }
+
+  .section-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #EA4036;
+  }
+
+  .section-header h2 {
+    font-size: 1.875rem;
+    color: #1a1a1a;
+    margin: 0;
+  }
+
+  .subtitle {
+    font-size: 0.875rem;
+    color: #999;
+    font-weight: 400;
+    margin-left: 0.5rem;
+  }
+
+  .section-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 1.5rem;
+  }
+
+  .media-container {
+    margin: 0 0 2rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .media-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Projects Grid */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .project-card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s;
+    border: 1px solid #e9ecef;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .project-icon {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+  }
+
+  .project-icon img {
+    width: 120px;
+    height: auto;
+  }
+
+  .icon-placeholder {
+    width: 80px;
+    height: 80px;
+    background: #e9ecef;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #adb5bd;
+    font-weight: bold;
+  }
+
+  .project-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-description {
+    font-size: 0.875rem;
+    color: #666;
+    margin: 0;
+  }
+
+  /* Tech Tags */
+  .tech-tags {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tech-tag {
+    display: inline-block;
+    background: #e9ecef;
+    color: #495057;
+    padding: 0.375rem 0.875rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    font-family: 'Courier New', monospace;
+  }
+
+  /* Link Button */
+  .link-button {
+    display: inline-block;
+    background-color: #EA4036;
+    color: white;
+    padding: 0.875rem 2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+    margin-top: 1rem;
+  }
+
+  .link-button:hover {
+    background-color: #d63630;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(234, 64, 54, 0.3);
+  }
+
+  .link-button.secondary {
+    background-color: #6c757d;
+  }
+
+  .link-button.secondary:hover {
+    background-color: #5a6268;
+    box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3);
+  }
+
+  /* Additional Info */
+  .additional-info {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e9ecef;
+  }
+
+  .additional-info p {
+    margin-bottom: 1rem;
+  }
+
+  /* Recruitment Section */
+  .recruitment-section {
+    background: #f8f9fa;
+  }
+
+  .notice-box {
+    background: #fff;
+    border-radius: 6px;
+    padding: 1.5rem;
+    border-left: 4px solid #EA4036;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .notice-box p {
+    margin: 0;
+    line-height: 1.8;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 968px) {
+    .recruit-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .toc {
+      position: static;
+      max-height: none;
+    }
+
+    .toc-nav {
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .recruit-container {
+      padding: 1rem;
+    }
+
+    .page-header h1 {
+      font-size: 2rem;
+    }
+
+    .project-section {
+      padding: 1.5rem;
+    }
+
+    .section-header h2 {
+      font-size: 1.5rem;
+    }
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
